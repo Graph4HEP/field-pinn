@@ -1,0 +1,18 @@
+Executable = /lustre/collider/libingzhi/.conda/envs/pinn/bin/python 
+Universe = vanilla
+Notification = Never
+should_transfer_files = NO
+
+    #default 
+    Output = ./log/jobcpu.out
+    Error  = ./log/jobcpu.err
+    Log    = ./log/jobcpu.log
+    request_CPUs = 2
+    Arguments = main.py --logdir ./log --experiment default_config --device cpu \
+                --lr 0.001 --adjust_lr 0 --Nsamples 32 --Ntest 1000 --radius 1 --length 1 \
+                --unit 32 --Nep 101 --Npde 256 --addBC 0 \
+                --standard 0 --geo cube --Btype Helmholtz
+    Queue
+
+    #you can add more jobs here    
+

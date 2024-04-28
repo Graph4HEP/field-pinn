@@ -1,0 +1,20 @@
+Executable = /lustre/collider/libingzhi/.conda/envs/pinn/bin/python 
+Universe = vanilla
+Notification = Never
+should_transfer_files = NO
+
+    #default 
+    Output = ./log/jobgpu.out
+    Error  = ./log/jobgpu.err
+    Log    = ./log/jobgpu.log
+    request_CPUs = 2
+    request_GPUs = 1
+    +SJTU_GPUModel = "V100_32G"
+    Arguments = main.py --logdir ./log --experiment default_config --device cuda:0 \
+                --lr 0.001 --adjust_lr 0 --Nsamples 32 --Ntest 1000 --radius 1 --length 1 \
+                --unit 32 --Nep 101 --Npde 256 --addBC 0 \
+                --standard 0 --geo cube --Btype Helmholtz
+    Queue
+
+    #you can add more jobs here    
+

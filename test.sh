@@ -1,0 +1,1 @@
+python main.py --logdir ./log --experiment default_config --device cpu --lr 0.001 --adjust_lr 0 --Nsamples 32 --Ntest 1000 --radius 1 --length 1 --unit 32 --Nep 101 --Npde 256 --addBC 0 --standard 0 --geo cube --Btype Helmholtz
